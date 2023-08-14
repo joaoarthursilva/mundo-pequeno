@@ -50,7 +50,7 @@ public class PlayerStats : MonoBehaviour
 
     private bool DecreaseSugarAmount()
     {
-        _currentSugarAmount--;
+        _currentSugarAmount = math.max(0, _currentSugarAmount - 1);
         return _currentSugarAmount > 0;
     }
 
