@@ -34,6 +34,6 @@ public class LevelManager : MonoBehaviour
     {
         if (_hasWon) return;
         _hasWon = true;
-        Debug.Log("ganhou");
+        Debug.Log("Won");
     }
 }
