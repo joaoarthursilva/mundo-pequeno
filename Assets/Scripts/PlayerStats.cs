@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -46,5 +47,11 @@ public class PlayerStats : MonoBehaviour
     {
         _currentSugarAmount--;
         return _currentSugarAmount > 0;
+    }
+
+    public void IncreaseSugarAmount(int amount)
+    {
+        _currentSugarAmount = math.min(maxSugarAmount, _currentSugarAmount+amount);
+        
     }
 }
