@@ -1,5 +1,3 @@
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,12 +7,16 @@ public class PlayerStats : MonoBehaviour
     private int _currentSugarAmount;
     [SerializeField] private Slider sugarAmountSlider;
     [SerializeField] private float timeToDecreaseSugarAmount;
+    private bool _isAlive;
 
     private void Awake()
     {
+        _isAlive = true;
         sugarAmountSlider.minValue = 0;
         sugarAmountSlider.maxValue = maxSugarAmount;
+
         _currentSugarAmount = maxSugarAmount;
+        sugarAmountSlider.value = _currentSugarAmount;
     }
 
     private void Start()
@@ -24,6 +26,7 @@ public class PlayerStats : MonoBehaviour
 
     private void ManageSugarAmount()
     {
+        if (!_isAlive) return;
         var decreased = DecreaseSugarAmount();
         if (!decreased)
         {
@@ -35,6 +38,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Die()
     {
+        _isAlive = false;
         Debug.Log("Died");
     }
 
