@@ -26,5 +26,4 @@ public class PlayerController : MonoBehaviour
     {
         _body.velocity = new Vector2(_horizontal * runSpeed, _vertical * runSpeed);
     }
-    // private void On
 }
