@@ -28,12 +28,17 @@ public class PlayerStats : MonoBehaviour
     private void ManageSugarAmount()
     {
         if (!_isAlive) return;
-        var decreased = DecreaseSugarAmount();
-        if (!decreased)
+        var hasDecreased = DecreaseSugarAmount();
+        if (!hasDecreased)
         {
             Die();
         }
 
+        UpdateSlider();
+    }
+
+    private void UpdateSlider()
+    {
         sugarAmountSlider.value = _currentSugarAmount;
     }
 
@@ -51,7 +56,7 @@ public class PlayerStats : MonoBehaviour
 
     public void IncreaseSugarAmount(int amount)
     {
-        _currentSugarAmount = math.min(maxSugarAmount, _currentSugarAmount+amount);
-        
+        _currentSugarAmount = math.min(maxSugarAmount, _currentSugarAmount + amount);
+        UpdateSlider();
     }
 }

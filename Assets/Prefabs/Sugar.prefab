@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1714099212237592356}
   - component: {fileID: 1714099212237592358}
   - component: {fileID: 1714099212237592353}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sugar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c591e75ffd5c2498754b297cee4cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amountOfSugar: 0
 --- !u!61 &1714099212237592353
 BoxCollider2D:
   m_ObjectHideFlags: 0
