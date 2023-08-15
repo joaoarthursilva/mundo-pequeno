@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Ant : MonoBehaviour
+namespace Enemies
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Ant : Enemy
     {
-        
-    }
+        public Transform destination;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Start()
+        {
+            Vector2.MoveTowards(gameObject.transform.position, destination.position, .1f);
+        }
+
+        private void Update()
+        {
+        }
     }
 }

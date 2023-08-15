@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour
     private int _amountOfSugars;
     private bool _hasWon;
     private int _sugarsLeftToCollect;
+
     private void Start()
     {
         _hasWon = false;
@@ -34,6 +35,7 @@ public class LevelManager : MonoBehaviour
     {
         if (_hasWon) return;
         _hasWon = true;
+        FindObjectOfType<PlayerStats>().Win();
         Debug.Log("Won");
     }
 }

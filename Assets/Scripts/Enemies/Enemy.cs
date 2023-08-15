@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+namespace Enemies
 {
-    // Start is called before the first frame update
-    void Start()
+    [RequireComponent(typeof(BoxCollider2D))]
+    public class Enemy : MonoBehaviour
     {
-        
-    }
+        private void Awake()
+        {
+            GetComponent<BoxCollider2D>().isTrigger = true;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            other.TryGetComponent(out PlayerStats playerStats);
+            playerStats.Kill();
+        }
     }
 }
