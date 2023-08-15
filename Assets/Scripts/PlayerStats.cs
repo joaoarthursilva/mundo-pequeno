@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+// using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private Slider sugarAmountSlider;
     [SerializeField] private float timeToDecreaseSugarAmount;
     private bool _isAlive;
-    [SerializeField]private PostProcessVolume postProcessVolume;
+    // [SerializeField]private PostProcessVolume postProcessVolume;
     private void Awake()
     {
         _isAlive = true;
@@ -36,13 +36,13 @@ public class PlayerStats : MonoBehaviour
         }
 
         UpdateSlider();
-        UpdateVisualFeedback();
+        // UpdateVisualFeedback();
     }
 
-    private void UpdateVisualFeedback()
-    {
-        // fazer profiles diferentes e alternar entre elas
-    }
+    // private void UpdateVisualFeedback()
+    // {
+    //     // fazer profiles diferentes e alternar entre elas
+    // }
     private void UpdateSlider()
     {
         sugarAmountSlider.value = _currentSugarAmount;
