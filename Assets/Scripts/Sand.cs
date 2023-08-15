@@ -1,18 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Sand : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float timeToVanish = 1f;
+    private bool _hasBeenTouched;
+    private GameObject _sandSprite;
+    [SerializeField] private Sugar sugarScript;
+
+    private void Awake()
     {
-        
+        _hasBeenTouched = false;
+        _sandSprite = transform.GetChild(0).gameObject;
+        _sandSprite.SetActive(true);
+        if (sugarScript == null) return;
+        sugarScript.GetComponent<Sugar>().DeactivateSugar();
+        sugarScript.transform.position = gameObject.transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (_hasBeenTouched) return;
+        _hasBeenTouched = true;
+        Invoke(nameof(VanishSand), timeToVanish);
+    }
+
+    private void VanishSand()
+    {
+        if (sugarScript != null)
+            sugarScript.GetComponent<Sugar>().ActivateSugar();
+        _sandSprite.SetActive(false);
     }
 }

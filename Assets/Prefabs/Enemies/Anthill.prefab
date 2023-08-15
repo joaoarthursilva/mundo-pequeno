@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3397827266641582220}
   - component: {fileID: 3397827266641582221}
   - component: {fileID: 3397827266641582218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anthill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
