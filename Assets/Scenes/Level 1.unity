@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9878322, b: 0.7971698, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -501,7 +501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACwn+uSVUALXAIAABMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMziVjHEhIb60hpAcSJqSTiy+yvMYaZMmjjwDJ8N+7km3s0ukJ8d7b3berlb8Il6YGZpVeaZ6vVQ7k+4j4M/k26sknONKdklv+CZ3mnee29CIaNK/UcoX4xIcZVYHVnP2QO+HFEYJO8kLpapnvIFHGGoQLKgwgpZX10RKhrxE54s/4wYec8BTf+9Mnnh6i0RmPDKQF3Us7YSdrVE4yQasacm+5F8ezLu0syCQ20yq8caaE4KZ1QuypDp0mtDYO+0BBzil2FspPbqJbRErgu9L6jMP4l6IwYFtXmp4WXOOMmsTkp2oGV1Gzb6x9UOHg4r1Juf6HHU8CXWhVPXVVJ5GvYEvO9q/0xKixg7kO4cXAeZjPgYo9zQS8lyCf1UorJ3MkrXY+1BmIF/3fS2NJCWzf443VK9DV/78d38M59H5MBK8yT91MG2ArVBh4uHvQeDW/0HDYDNOmQNS7+G3gje6GK9QSj1wbi1TbpfT2MuW0l5JlmJnvxtlEaQkBbk3XIKmwpw2msdcXeMUNyl4xj9Q/lrZ4y3Vv4CokwL0+iq6ojTpcLsuU6rAGU744K7iE3rQnnnFOiZKy2a/hTLqwrdMFZYOwneP536tF4vt5dDedzLK7mEVxNBvPI3bLpvMim8bzLIMZCbvHJfZJxaYx2o4Hb032ySXuWfcNGa00rcOu55oeVvyzUoORc1moLdMA8qXJcDEOGovgs8yXOccBbcFaLsN9k6+UCMX2kKeXRGnodHm0mqZ9lpTU/ENZj6QkCR+NlHj4sssbDR8cDr54l+xMzn8AUEsDBBQAAAgIAACwn+sdSO8sbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSkbmFgZmJoWmSmVGygZGBqa6FQbJxsolFWpKJkUVSUqqpUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACwn+uSVUALXAIAABMFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACwn+sdSO8sbQAAAHgAAAAJACQAAAAAAAAAAAAAAKkCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAYQMAAAAA
+    dataString: UEsDBBQAAAgIAACwn+tiaovdWwIAABMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMziVjHEhIb60hpAcSJqSTiy+yvMYaZMmjjwDJ8N+7km3s0ukJ8d7b3berlb8Il6YGZpVeaZ6vVQ7k+4j4M/k26sknONKdklv+CZ3mnee29CIaNK/UcoX4xIcZVYHVnP2QO+HFEYJO8kLpapnvIFHGGoQLKgwgpZX10RKhrxE54s/4wYec8BTf+9Mnnh6i0RmPDKQF3Us7YSdrVE4yQasacm+5F8ezLu0syCQ20yq8caaE4KZ1QuypDp0mtDYO+0BBzil2FspPbm59SAl8V1qfcRj/UhQGbOtK09OCa5xRk5j8VM3gKmr2jbUPKhxcvDcp1/+w40mgC62qp67qJPIVbMnZ/pWeGDV2MNchvBg4D/M5ULGnmYD3EuSzWmnlZI6k1c6HOgPxov97aSwpge17vLF6Bbr6/7fjeziH3o+J4FXmqZtpA2yFCgMPdw8ar+YXGg6bYdoUiHoXvw280d1whVrikWtjkWq7lN5eppz2UrIMM/PdOJsoLSHArekaJBX2tME09voCr7hB2SvmkfrH0hZvue4NXIUEuNdH0RW1UYfLZZlSHdZgyhdnBZfQm/bEM84pUVI2+zWcSRe2dbqgbBC2czz/e7VIfD+P7qaTWXYXsyiOZuN5xG7ZdF5k03ieZTAjYfe4xD6p2DRG2/Hgrck+ucQ9674ho5Wmddj1XNPDin9WajByLgu1ZRpAvjQZLsZBYxF8lvky5zigLVjLZbhv8pUSodge8vSSKA2dLo9W07TPkpKafyjrkZQk4aOREg9fdnmj4YPDwRfvkp3J+Q9QSwMEFAAACAgAALCf6x1I7yxtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJKRuYWBmYmhaZKZUbKBkYGproVBsnGyiUVakomRRVJSqqlSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAALCf62Jqi91bAgAAEwUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAALCf6x1I7yxtAAAAeAAAAAkAJAAAAAAAAAAAAAAAqAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABgAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -514,7 +514,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -1630,7 +1630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.96834797, g: 1, b: 0.6933962, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1719,17 +1719,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1773054890, guid: d89bc936d7321dc4c9e3afc6aa48e3df, type: 3}
+      propertyPath: startEndModifier.addPoints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8482949615328246113, guid: d89bc936d7321dc4c9e3afc6aa48e3df, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8482949615328246113, guid: d89bc936d7321dc4c9e3afc6aa48e3df, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.129079
+      value: -9.77
       objectReference: {fileID: 0}
     - target: {fileID: 8482949615328246113, guid: d89bc936d7321dc4c9e3afc6aa48e3df, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.840611
+      value: -10.13
       objectReference: {fileID: 0}
     - target: {fileID: 8482949615328246113, guid: d89bc936d7321dc4c9e3afc6aa48e3df, type: 3}
       propertyPath: m_LocalPosition.z
