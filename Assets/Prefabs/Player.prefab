@@ -160,6 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7f0e4d2fe54bd458b06c38b5b18c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSugarAmount: 0
+  maxSugarAmount: 10
   sugarAmountSlider: {fileID: 0}
-  timeToDecreaseSugarAmount: 0
+  timeToDecreaseSugarAmount: 1
