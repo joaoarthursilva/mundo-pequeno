@@ -13,7 +13,8 @@ namespace Enemies
         private void OnTriggerEnter2D(Collider2D other)
         {
             other.TryGetComponent(out PlayerStats playerStats);
-            playerStats.Kill();
+            if (playerStats)
+                playerStats.Kill();
         }
     }
 }

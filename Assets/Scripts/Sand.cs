@@ -13,8 +13,12 @@ public class Sand : MonoBehaviour
         _sandSprite = transform.GetChild(0).gameObject;
         _sandSprite.SetActive(true);
         if (sugarScript == null) return;
-        sugarScript.GetComponent<Sugar>().DeactivateSugar();
         sugarScript.transform.position = gameObject.transform.position;
+    }
+
+    private void Start()
+    {
+        sugarScript.GetComponent<Sugar>().DeactivateSugar();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
