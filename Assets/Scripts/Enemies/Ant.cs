@@ -42,6 +42,9 @@ namespace Enemies
 
         private void OnTriggerEnter2D(Collider2D col)
         {
+            col.TryGetComponent(out PlayerStats playerStats);
+            if (playerStats)
+                playerStats.Kill();
             if (!_canEnterAnthill) return;
             col.TryGetComponent(out Anthill anthill);
             if (!anthill) return;
