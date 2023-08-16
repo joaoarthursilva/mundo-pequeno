@@ -146,3 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea1e31c086143c4fbf7e30bede81cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spiderWeb: {fileID: 2299864964997133504, guid: 1ea662b908a61e949aee4207844ab678, type: 3}
