@@ -5,7 +5,7 @@ namespace Enemies
     public class Spider : Enemy
     {
         private Vector2 _targetPosition;
-        private Vector2 _startingAnthillPosition;
+        private Vector2 _startingPosition;
         private bool _canMove;
         private Rigidbody2D _rb;
         private Transform _transform;
