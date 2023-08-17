@@ -14,6 +14,8 @@ namespace Enemies
             Up
         }
 
+        private bool _isHorizontalMovement;
+
         [SerializeField] private float movementDelay;
         private Rigidbody2D _rb;
         private Transform _transform;
@@ -27,6 +29,7 @@ namespace Enemies
 
         private void Start()
         {
+            _isHorizontalMovement = true;
             _transform = GetComponent<Transform>();
             _rb = GetComponent<Rigidbody2D>();
             _minX = GameObject.FindWithTag("TopLeft").transform.position.x;
@@ -40,32 +43,67 @@ namespace Enemies
 
         private void Update()
         {
-            if (HasArrivedOnTarget()) UpdateTarget();
             if (new Vector2(_transform.position.x, _transform.position.y) == new Vector2(_maxX, _minY))
-                _rb.MovePosition(new Vector2(_minX, _minY));
+            {
+                _target = new Vector2(_maxX, _maxY);
+                _currentDirection = Direction.Up;
+                _isHorizontalMovement = false;
+            }
+            else if (new Vector2(_transform.position.x, _transform.position.y) == new Vector2(_minX, _maxY))
+            {
+                _target = new Vector2(_maxX, _maxY);
+                _currentDirection = Direction.Right;
+                _isHorizontalMovement = true;
+            }
+
+            if (HasArrivedOnTarget()) UpdateTarget();
         }
 
         private Direction _previousDirection;
 
         private void UpdateTarget()
         {
-            if (_currentDirection is Direction.Right or Direction.Left)
+            if (_isHorizontalMovement)
             {
-                _target = new Vector2(_target.x, _target.y - 1);
-                _previousDirection = _currentDirection;
-                _currentDirection = Direction.Down;
+                if (_currentDirection is Direction.Right or Direction.Left)
+                {
+                    _target = new Vector2(_target.x, _target.y - 1);
+                    _previousDirection = _currentDirection;
+                    _currentDirection = Direction.Down;
+                }
+                else if (_currentDirection == Direction.Down && _previousDirection == Direction.Right)
+                {
+                    _target = new Vector2(_minX, _target.y);
+                    _previousDirection = _currentDirection;
+                    _currentDirection = Direction.Left;
+                }
+                else if (_currentDirection == Direction.Down && _previousDirection == Direction.Left)
+                {
+                    _target = new Vector2(_maxX, _target.y);
+                    _previousDirection = _currentDirection;
+                    _currentDirection = Direction.Right;
+                }
             }
-            else if (_currentDirection == Direction.Down && _previousDirection == Direction.Right)
+            else
             {
-                _target = new Vector2(_minX, _target.y);
-                _previousDirection = _currentDirection;
-                _currentDirection = Direction.Left;
-            }
-            else if (_currentDirection == Direction.Down && _previousDirection == Direction.Left)
-            {
-                _target = new Vector2(_maxX, _target.y);
-                _previousDirection = _currentDirection;
-                _currentDirection = Direction.Right;
+                if (_currentDirection is Direction.Up or Direction.Down)
+                {
+                    _target = new Vector2(_target.x - 1, _target.y);
+                    _previousDirection = _currentDirection;
+                    _currentDirection = Direction.Left;
+                }
+                else if (_currentDirection == Direction.Left && _previousDirection == Direction.Down)
+                {
+                    _target = new Vector2(_target.x, _maxY);
+                    _previousDirection = _currentDirection;
+                    _currentDirection = Direction.Up;
+                }
+                else if (_currentDirection == Direction.Left && _previousDirection == Direction.Up)
+                {
+                    _target = new Vector2(_target.x, _minY);
+                    _previousDirection = _currentDirection;
+                    _currentDirection = Direction.Down;
+                }
             }
         }
 
