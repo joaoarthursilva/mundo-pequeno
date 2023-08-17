@@ -147,3 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spiderWeb: {fileID: 2299864964997133504, guid: 1ea662b908a61e949aee4207844ab678, type: 3}
+  releaseSpiderWebDelay: 2
+  topLeft: {fileID: 0}
+  topRight: {fileID: 0}
+  bottomLeft: {fileID: 0}
