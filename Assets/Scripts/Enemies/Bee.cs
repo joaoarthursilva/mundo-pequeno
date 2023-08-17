@@ -6,13 +6,13 @@ namespace Enemies
     public class Bee : Enemy
     {
         private Transform _target;
-        public float speed = 300f;
-        public float nextWaypointDistance = 3f;
+        public float speed = 600f;
+        public float nextWaypointDistance = .5f;
         private Path _path;
         private int _currentWaypoint;
         private Seeker _seeker;
         private Rigidbody2D _rb;
-        public float repeatRate = .5f;
+        public float repeatRate = .1f;
         private bool _canMove;
 
         private void Start()
@@ -43,6 +43,7 @@ namespace Enemies
             if (_canMove) Movement();
         }
 
+        private Vector2 _direction;
         private void Movement()
         {
             if (_path == null) return;
@@ -51,9 +52,9 @@ namespace Enemies
                 return;
             }
 
-            var direction = ((Vector2)_path.vectorPath[_currentWaypoint] - _rb.position).normalized;
-            var force = direction * (speed * Time.deltaTime);
-
+            _direction = ((Vector2)_path.vectorPath[_currentWaypoint] - _rb.position).normalized;
+            var force = _direction * (speed * Time.deltaTime);
+            
             _rb.AddForce(force);
 
             var distance = Vector2.Distance(_rb.position, _path.vectorPath[_currentWaypoint]);
@@ -62,6 +63,21 @@ namespace Enemies
             {
                 _currentWaypoint++;
             }
+        }
+
+        
+        public float GetHorizontalSpeed()
+        {
+            return _direction.x;
+        }
+        public float GetVerticalSpeed()
+        {
+            return _direction.y;
+        }
+
+        public bool IsMovingRight()
+        {
+            return _direction.x >= 0;
         }
     }
 }
