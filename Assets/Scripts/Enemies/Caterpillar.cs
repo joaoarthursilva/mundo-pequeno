@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Enemies
 {
@@ -65,44 +64,44 @@ namespace Enemies
         {
             if (_isHorizontalMovement)
             {
-                if (_currentDirection is Direction.Right or Direction.Left)
+                switch (_currentDirection)
                 {
-                    _target = new Vector2(_target.x, _target.y - 1);
-                    _previousDirection = _currentDirection;
-                    _currentDirection = Direction.Down;
-                }
-                else if (_currentDirection == Direction.Down && _previousDirection == Direction.Right)
-                {
-                    _target = new Vector2(_minX, _target.y);
-                    _previousDirection = _currentDirection;
-                    _currentDirection = Direction.Left;
-                }
-                else if (_currentDirection == Direction.Down && _previousDirection == Direction.Left)
-                {
-                    _target = new Vector2(_maxX, _target.y);
-                    _previousDirection = _currentDirection;
-                    _currentDirection = Direction.Right;
+                    case Direction.Right or Direction.Left:
+                        _target = new Vector2(_target.x, _target.y - 1);
+                        _previousDirection = _currentDirection;
+                        _currentDirection = Direction.Down;
+                        break;
+                    case Direction.Down when _previousDirection == Direction.Right:
+                        _target = new Vector2(_minX, _target.y);
+                        _previousDirection = _currentDirection;
+                        _currentDirection = Direction.Left;
+                        break;
+                    case Direction.Down when _previousDirection == Direction.Left:
+                        _target = new Vector2(_maxX, _target.y);
+                        _previousDirection = _currentDirection;
+                        _currentDirection = Direction.Right;
+                        break;
                 }
             }
             else
             {
-                if (_currentDirection is Direction.Up or Direction.Down)
+                switch (_currentDirection)
                 {
-                    _target = new Vector2(_target.x - 1, _target.y);
-                    _previousDirection = _currentDirection;
-                    _currentDirection = Direction.Left;
-                }
-                else if (_currentDirection == Direction.Left && _previousDirection == Direction.Down)
-                {
-                    _target = new Vector2(_target.x, _maxY);
-                    _previousDirection = _currentDirection;
-                    _currentDirection = Direction.Up;
-                }
-                else if (_currentDirection == Direction.Left && _previousDirection == Direction.Up)
-                {
-                    _target = new Vector2(_target.x, _minY);
-                    _previousDirection = _currentDirection;
-                    _currentDirection = Direction.Down;
+                    case Direction.Up or Direction.Down:
+                        _target = new Vector2(_target.x - 1, _target.y);
+                        _previousDirection = _currentDirection;
+                        _currentDirection = Direction.Left;
+                        break;
+                    case Direction.Left when _previousDirection == Direction.Down:
+                        _target = new Vector2(_target.x, _maxY);
+                        _previousDirection = _currentDirection;
+                        _currentDirection = Direction.Up;
+                        break;
+                    case Direction.Left when _previousDirection == Direction.Up:
+                        _target = new Vector2(_target.x, _minY);
+                        _previousDirection = _currentDirection;
+                        _currentDirection = Direction.Down;
+                        break;
                 }
             }
         }
