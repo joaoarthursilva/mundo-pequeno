@@ -364,29 +364,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160405830}
   m_CullTransparentMesh: 1
---- !u!1 &187300769 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8482949615328246119, guid: d89bc936d7321dc4c9e3afc6aa48e3df, type: 3}
-  m_PrefabInstance: {fileID: 1756061586}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &187300770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187300769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e443781a148e204fa63ddb0eee985e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beeAnimator: {fileID: 187300771}
---- !u!95 &187300771 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1756061588, guid: d89bc936d7321dc4c9e3afc6aa48e3df, type: 3}
-  m_PrefabInstance: {fileID: 1756061586}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &217618628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1742,10 +1719,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8482949615328246112, guid: d89bc936d7321dc4c9e3afc6aa48e3df, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8482949615328246113, guid: d89bc936d7321dc4c9e3afc6aa48e3df, type: 3}
       propertyPath: m_RootOrder
       value: 1
