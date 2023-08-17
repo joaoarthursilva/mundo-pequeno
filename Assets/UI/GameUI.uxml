@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/button.uss?fileID=7433441132597879392&amp;guid=bd5408a3ca2972b4cac43fa176e492c6&amp;type=3#button" />
+    <ui:VisualElement>
+        <ui:VisualElement name="Container" style="justify-content: flex-end; flex-basis: auto;">
+            <ui:Label text="Name of the game&#10;" display-tooltip-when-elided="true" name="Name" style="justify-content: flex-end; align-items: center; -unity-text-align: upper-center; -unity-font: url(&apos;project://database/Library/unity%20default%20resources?fileID=10102&amp;guid=0000000000000000e000000000000000&amp;type=0#Arial&apos;); -unity-font-style: bold; font-size: 55%; -unity-text-outline-width: 1px;" />
+            <ui:Button text="Play" display-tooltip-when-elided="true" name="Play" />
+            <ui:Button text="Settings" display-tooltip-when-elided="true" name="Settings" />
+            <ui:Button text="Credits" display-tooltip-when-elided="true" name="Credits" />
+            <ui:Button text="Exit" display-tooltip-when-elided="true" name="Exit" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
