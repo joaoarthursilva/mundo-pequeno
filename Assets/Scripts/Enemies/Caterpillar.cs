@@ -14,93 +14,85 @@ namespace Enemies
             Up
         }
 
-        private Queue<Direction> _pathDown;
-        private Queue<Direction> _pathUp;
-        [SerializeField] private float speed = 7;
-        private bool _canMove;
+        [SerializeField] private float movementDelay;
         private Rigidbody2D _rb;
         private Transform _transform;
-        private Vector2 _targetPosition;
 
-        [SerializeField] private Transform topLeft;
-        [SerializeField] private Transform topRight;
-        [SerializeField] private Transform bottomLeft;
-        [SerializeField] private Transform bottomRight;
+        private Direction _currentDirection;
+        private Vector2 _target;
+        private float _minX;
+        private float _maxX;
+        private float _minY;
+        private float _maxY;
 
         private void Start()
         {
-            _pathDown = new Queue<Direction>();
-            _pathUp = new Queue<Direction>();
-            ResetPathDownQueue();
-            ResetPathUpQueue();
-
-            _canMove = true;
-        }
-
-        private void ResetPathDownQueue()
-        {
-            _pathDown.Clear();
-            _pathDown.Enqueue(Direction.Right);
-            _pathDown.Enqueue(Direction.Down);
-            _pathDown.Enqueue(Direction.Left);
-            _pathDown.Enqueue(Direction.Down);
-        }
-
-        private void ResetPathUpQueue()
-        {
-            _pathUp.Clear();
-            _pathUp.Enqueue(Direction.Up);
-            _pathUp.Enqueue(Direction.Left);
-            _pathUp.Enqueue(Direction.Up);
-            _pathUp.Enqueue(Direction.Right);
+            _transform = GetComponent<Transform>();
+            _rb = GetComponent<Rigidbody2D>();
+            _minX = GameObject.FindWithTag("TopLeft").transform.position.x;
+            _maxX = GameObject.FindWithTag("TopRight").transform.position.x;
+            _minY = GameObject.FindWithTag("BottomLeft").transform.position.y;
+            _maxY = GameObject.FindWithTag("TopLeft").transform.position.y;
+            _target = new Vector2(_maxX, _maxY);
+            _currentDirection = Direction.Right;
+            InvokeRepeating(nameof(Move), movementDelay, movementDelay);
         }
 
         private void Update()
         {
-            if (_canMove)
+            if (HasArrivedOnTarget()) UpdateTarget();
+            if (new Vector2(_transform.position.x, _transform.position.y) == new Vector2(_maxX, _minY))
+                _rb.MovePosition(new Vector2(_minX, _minY));
+        }
+
+        private Direction _previousDirection;
+
+        private void UpdateTarget()
+        {
+            if (_currentDirection is Direction.Right or Direction.Left)
             {
-                VerifyPosition();
+                _target = new Vector2(_target.x, _target.y - 1);
+                _previousDirection = _currentDirection;
+                _currentDirection = Direction.Down;
+            }
+            else if (_currentDirection == Direction.Down && _previousDirection == Direction.Right)
+            {
+                _target = new Vector2(_minX, _target.y);
+                _previousDirection = _currentDirection;
+                _currentDirection = Direction.Left;
+            }
+            else if (_currentDirection == Direction.Down && _previousDirection == Direction.Left)
+            {
+                _target = new Vector2(_maxX, _target.y);
+                _previousDirection = _currentDirection;
+                _currentDirection = Direction.Right;
             }
         }
 
-        private void VerifyPosition()
+        private bool HasArrivedOnTarget()
         {
-            if (new Vector2(_transform.position.x, _transform.position.y) == _targetPosition) // arrived on target
+            return _target.x == _transform.position.x && _target.y == _transform.position.y;
+        }
+
+        private void Move()
+        {
+            var position = _transform.position;
+
+            switch (_currentDirection)
             {
+                case Direction.Right:
+                    _rb.MovePosition(new Vector2(position.x + 1, position.y));
+                    break;
+                case Direction.Left:
+                    _rb.MovePosition(new Vector2(position.x - 1, position.y));
+                    break;
+                case Direction.Down:
+                    _rb.MovePosition(new Vector2(position.x, position.y - 1));
+                    break;
+                case Direction.Up:
+                    _rb.MovePosition(new Vector2(position.x, position.y + 1));
+                    break;
             }
         }
-
-        private void MoveRight()
-        {
-            var position = _transform.position;
-            var target = new Vector2(position.x + 1, position.y);
-            _rb.MovePosition(Vector2.MoveTowards(position, target, speed * Time.deltaTime));
-        }
-
-        private void MoveDown()
-        {
-            var position = _transform.position;
-            var target = new Vector2(position.x, position.y - 1);
-            _rb.MovePosition(Vector2.MoveTowards(position, target, speed * Time.deltaTime));
-        }
-
-        private void MoveLeft()
-        {
-            var position = _transform.position;
-            var target = new Vector2(position.x - 1, position.y);
-            _rb.MovePosition(Vector2.MoveTowards(position, target, speed * Time.deltaTime));
-        }
-
-        private void MoveUp()
-        {
-            var position = _transform.position;
-            var target = new Vector2(position.x, position.y + 1);
-            _rb.MovePosition(Vector2.MoveTowards(position, target, speed * Time.deltaTime));
-        }
-
-        // private void Move()
-        // {
-        //     _rb.MovePosition(Vector2.MoveTowards(_transform.position, _targetPosition, speed * Time.deltaTime));
-        // }
     }
 }
