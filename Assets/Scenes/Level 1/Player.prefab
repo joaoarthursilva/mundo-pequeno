@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 59edd7f9e24b11e429a32f62c4ce65ae, type: 3}
-  m_Color: {r: 1, g: 0.4669811, b: 0.8041134, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -147,7 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbd13174aaf09b46b8e6a8c1047b785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 7
+  normalRunSpeed: 7
+  _animator: {fileID: 0}
 --- !u!114 &221502732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,4 +164,3 @@ MonoBehaviour:
   maxSugarAmount: 10
   sugarAmountSlider: {fileID: 0}
   timeToDecreaseSugarAmount: 1
-  postProcessVolume: {fileID: 0}

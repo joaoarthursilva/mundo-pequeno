@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3872271803033298156}
   - component: {fileID: 3872271803033298158}
   - component: {fileID: 221502732}
+  - component: {fileID: 6938158005972267206}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -77,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: dbdb0b1a3e8836e478930e3d84d3b4a4, type: 3}
-  m_Color: {r: 1, g: 0.4669811, b: 0.8041134, a: 1}
+  m_Sprite: {fileID: -683099778, guid: 4eec5fe5c8fba514d9e05d0e38dac6ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -147,7 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbd13174aaf09b46b8e6a8c1047b785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 7
+  normalRunSpeed: 7
+  _animator: {fileID: 6938158005972267206}
 --- !u!114 &221502732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,3 +165,23 @@ MonoBehaviour:
   maxSugarAmount: 10
   sugarAmountSlider: {fileID: 0}
   timeToDecreaseSugarAmount: 1
+--- !u!95 &6938158005972267206
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3872271803033298147}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ae16dba0d367dd74d9bdae9ab123f6cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
