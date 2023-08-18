@@ -131,5 +131,9 @@ namespace Enemies
                     break;
             }
         }
+        public bool IsHorizontalMovement()
+        {
+            return _isHorizontalMovement;
+        }
     }
 }

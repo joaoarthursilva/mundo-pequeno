@@ -14,12 +14,13 @@ public class PlayerController : MonoBehaviour
     private bool _canMove;
     private SpriteRenderer _playerSpriteRenderer;
 
-    [SerializeField] private Animator animator;
+    private Animator _animator;
     private static readonly int HorizontalSpeed = Animator.StringToHash("horizontalSpeed");
     private static readonly int Vertical = Animator.StringToHash("vertical");
 
     private void Start()
     {
+        _animator = GetComponent<Animator>();
         _playerSpriteRenderer = GetComponent<SpriteRenderer>();
         _currentMoveSpeed = normalRunSpeed;
         TurnOnMovement();
@@ -44,13 +45,13 @@ public class PlayerController : MonoBehaviour
                 _playerSpriteRenderer.flipX = false;
             }
 
-            animator.SetFloat(HorizontalSpeed, Mathf.Abs(_horizontal));
-            animator.SetFloat(Vertical, 0);
+            _animator.SetFloat(HorizontalSpeed, Mathf.Abs(_horizontal));
+            _animator.SetFloat(Vertical, 0);
         }
         else
         {
-            animator.SetFloat(HorizontalSpeed, 0);
-            animator.SetFloat(Vertical, _vertical);
+            _animator.SetFloat(HorizontalSpeed, 0);
+            _animator.SetFloat(Vertical, _vertical);
         }
     }
 
