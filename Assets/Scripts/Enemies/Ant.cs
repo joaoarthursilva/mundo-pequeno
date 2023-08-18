@@ -31,6 +31,7 @@ namespace Enemies
             {
                 _currentTarget = ManageAnthills.GetRandomAnthill().transform.position;
             } while (_currentTarget == _spawn);
+
             return _currentTarget;
         }
 
@@ -78,6 +79,11 @@ namespace Enemies
 
         private bool _toggleMovementDirection = true;
         private Vector2 _prevPos;
+
+        public Vector2 GetTargetAnthillPosition()
+        {
+            return _targetAnthillPosition;
+        }
 
         private void Move()
         {

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1183746610140099826}
   - component: {fileID: 823630472610828496}
   - component: {fileID: 7938736162679716329}
+  - component: {fileID: 5525389340110420486}
   m_Layer: 6
   m_Name: Body (4)
   m_TagString: Untagged
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: efcada8473ddeca4eba752a35da3cdee, type: 3}
-  m_Color: {r: 1, g: 0.9443454, b: 0.5801887, a: 1}
+  m_Sprite: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -147,6 +148,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDelay: 0.1
+--- !u!114 &5525389340110420486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2446745711018365474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a668b16a254f4802a8529518ff782376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftNormalBody: {fileID: 91882854, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  rightNormalBody: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  upNormalBody: {fileID: 1995259745, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  downNormalBody: {fileID: -1795580091, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  leftToDownCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  rightToDownCurveBody: {fileID: -1595179478, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  upToRightCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  downToRightCurveBody: {fileID: 341366079, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  downToLeftCurveBody: {fileID: 1601005252, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
 --- !u!1 &2769473326441745500
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +182,7 @@ GameObject:
   - component: {fileID: 1153143377275177503}
   - component: {fileID: 1732446403134135623}
   - component: {fileID: 3850100984370806514}
+  - component: {fileID: 2767118340841056990}
   m_Layer: 6
   m_Name: Body (3)
   m_TagString: Untagged
@@ -223,8 +246,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: efcada8473ddeca4eba752a35da3cdee, type: 3}
-  m_Color: {r: 1, g: 0.9443454, b: 0.5801887, a: 1}
+  m_Sprite: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -294,6 +317,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDelay: 0.1
+--- !u!114 &2767118340841056990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2769473326441745500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a668b16a254f4802a8529518ff782376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftNormalBody: {fileID: 91882854, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  rightNormalBody: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  upNormalBody: {fileID: 1995259745, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  downNormalBody: {fileID: -1795580091, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  leftToDownCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  rightToDownCurveBody: {fileID: -1595179478, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  upToRightCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  downToRightCurveBody: {fileID: 341366079, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  downToLeftCurveBody: {fileID: 1601005252, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
 --- !u!1 &4390520065056920078
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,6 +351,7 @@ GameObject:
   - component: {fileID: 256850926774377295}
   - component: {fileID: 7487365175995039596}
   - component: {fileID: 3883010305555483420}
+  - component: {fileID: 8020822534501819124}
   m_Layer: 6
   m_Name: Body (5)
   m_TagString: Untagged
@@ -370,8 +415,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: efcada8473ddeca4eba752a35da3cdee, type: 3}
-  m_Color: {r: 1, g: 0.9443454, b: 0.5801887, a: 1}
+  m_Sprite: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -441,6 +486,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDelay: 0.1
+--- !u!114 &8020822534501819124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4390520065056920078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a668b16a254f4802a8529518ff782376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftNormalBody: {fileID: 91882854, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  rightNormalBody: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  upNormalBody: {fileID: 1995259745, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  downNormalBody: {fileID: -1795580091, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  leftToDownCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  rightToDownCurveBody: {fileID: -1595179478, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  upToRightCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  downToRightCurveBody: {fileID: 341366079, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  downToLeftCurveBody: {fileID: 1601005252, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
 --- !u!1 &4583334529164331433
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,6 +520,7 @@ GameObject:
   - component: {fileID: 2769708189379244332}
   - component: {fileID: 3079260289833013975}
   - component: {fileID: 1988261101063410528}
+  - component: {fileID: 7709253046936981854}
   m_Layer: 6
   m_Name: Body (6)
   m_TagString: Untagged
@@ -517,8 +584,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: efcada8473ddeca4eba752a35da3cdee, type: 3}
-  m_Color: {r: 1, g: 0.9443454, b: 0.5801887, a: 1}
+  m_Sprite: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -588,6 +655,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDelay: 0.1
+--- !u!114 &7709253046936981854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4583334529164331433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a668b16a254f4802a8529518ff782376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftNormalBody: {fileID: 91882854, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  rightNormalBody: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  upNormalBody: {fileID: 1995259745, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  downNormalBody: {fileID: -1795580091, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  leftToDownCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  rightToDownCurveBody: {fileID: -1595179478, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  upToRightCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  downToRightCurveBody: {fileID: 341366079, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  downToLeftCurveBody: {fileID: 1601005252, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
 --- !u!1 &6005105387407729711
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +689,7 @@ GameObject:
   - component: {fileID: 6005105387407729707}
   - component: {fileID: 6005105387407729708}
   - component: {fileID: 6005105387407729709}
+  - component: {fileID: 2171291725115102347}
   m_Layer: 6
   m_Name: Body (2)
   m_TagString: Untagged
@@ -664,8 +753,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: efcada8473ddeca4eba752a35da3cdee, type: 3}
-  m_Color: {r: 1, g: 0.9443454, b: 0.5801887, a: 1}
+  m_Sprite: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -735,6 +824,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDelay: 0.1
+--- !u!114 &2171291725115102347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6005105387407729711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a668b16a254f4802a8529518ff782376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftNormalBody: {fileID: 91882854, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  rightNormalBody: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  upNormalBody: {fileID: 1995259745, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  downNormalBody: {fileID: -1795580091, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  leftToDownCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  rightToDownCurveBody: {fileID: -1595179478, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  upToRightCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  downToRightCurveBody: {fileID: 341366079, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  downToLeftCurveBody: {fileID: 1601005252, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
 --- !u!1 &6005105387801771814
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +858,7 @@ GameObject:
   - component: {fileID: 6005105387801771809}
   - component: {fileID: 6005105387801771810}
   - component: {fileID: 6005105387801771811}
+  - component: {fileID: 213228499}
   m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
@@ -768,7 +879,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6005105387825380546}
-  m_RootOrder: 0
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6005105387801771812
 SpriteRenderer:
@@ -811,8 +922,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: efcada8473ddeca4eba752a35da3cdee, type: 3}
-  m_Color: {r: 0.46543255, g: 1, b: 0.16509432, a: 1}
+  m_Sprite: {fileID: -1886555472, guid: 6eefc7d31ad3fa546b79d465547140b6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -882,6 +993,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDelay: 0.1
+--- !u!114 &213228499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6005105387801771814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec335387ebec10a439e9bee3d9e93d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightHead: {fileID: -1886555472, guid: 6eefc7d31ad3fa546b79d465547140b6, type: 3}
+  leftHead: {fileID: 1550567498, guid: 6eefc7d31ad3fa546b79d465547140b6, type: 3}
+  downHead: {fileID: -1607700546, guid: 6eefc7d31ad3fa546b79d465547140b6, type: 3}
+  upHead: {fileID: 126119296, guid: 6eefc7d31ad3fa546b79d465547140b6, type: 3}
 --- !u!1 &6005105387825380547
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,7 +1037,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6005105387801771813}
+  - {fileID: 6005105388717826826}
   - {fileID: 6005105388905284628}
   - {fileID: 6005105388699052508}
   - {fileID: 6005105387407729710}
@@ -918,7 +1045,7 @@ Transform:
   - {fileID: 2073719793871783970}
   - {fileID: 2641167804338735992}
   - {fileID: 6899720209390002444}
-  - {fileID: 6005105388717826826}
+  - {fileID: 6005105387801771813}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -935,6 +1062,7 @@ GameObject:
   - component: {fileID: 6005105388699052505}
   - component: {fileID: 6005105388699052506}
   - component: {fileID: 6005105388699052507}
+  - component: {fileID: 9071954763990673490}
   m_Layer: 6
   m_Name: Body (1)
   m_TagString: Untagged
@@ -998,8 +1126,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: efcada8473ddeca4eba752a35da3cdee, type: 3}
-  m_Color: {r: 1, g: 0.9443454, b: 0.5801887, a: 1}
+  m_Sprite: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1069,6 +1197,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDelay: 0.1
+--- !u!114 &9071954763990673490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6005105388699052509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a668b16a254f4802a8529518ff782376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftNormalBody: {fileID: 91882854, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  rightNormalBody: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  upNormalBody: {fileID: 1995259745, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  downNormalBody: {fileID: -1795580091, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  leftToDownCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  rightToDownCurveBody: {fileID: -1595179478, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  upToRightCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  downToRightCurveBody: {fileID: 341366079, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  downToLeftCurveBody: {fileID: 1601005252, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
 --- !u!1 &6005105388717826827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1231,7 @@ GameObject:
   - component: {fileID: 6005105388717826822}
   - component: {fileID: 6005105388717826823}
   - component: {fileID: 6005105388717826824}
+  - component: {fileID: 345628213545406353}
   m_Layer: 6
   m_Name: Tail
   m_TagString: Untagged
@@ -1102,7 +1252,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6005105387825380546}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6005105388717826825
 SpriteRenderer:
@@ -1145,8 +1295,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: efcada8473ddeca4eba752a35da3cdee, type: 3}
-  m_Color: {r: 0.9716981, g: 0.44459772, b: 0.44459772, a: 1}
+  m_Sprite: {fileID: 1965778300, guid: 39d6f48fd41c36d46ae216339a0644ef, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1216,6 +1366,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDelay: 0.1
+--- !u!114 &345628213545406353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6005105388717826827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 254c482bf9e94a42a32fb977c65a768a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightBack: {fileID: 1965778300, guid: 39d6f48fd41c36d46ae216339a0644ef, type: 3}
+  leftBack: {fileID: 976540330, guid: 39d6f48fd41c36d46ae216339a0644ef, type: 3}
+  downBack: {fileID: 1782630805, guid: 39d6f48fd41c36d46ae216339a0644ef, type: 3}
+  upBack: {fileID: -1890777252, guid: 39d6f48fd41c36d46ae216339a0644ef, type: 3}
 --- !u!1 &6005105388905284629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,6 +1395,7 @@ GameObject:
   - component: {fileID: 6005105388905284623}
   - component: {fileID: 6005105388905284624}
   - component: {fileID: 6005105388905284625}
+  - component: {fileID: 4442990444938256924}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -1292,8 +1459,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: efcada8473ddeca4eba752a35da3cdee, type: 3}
-  m_Color: {r: 1, g: 0.9443454, b: 0.5801887, a: 1}
+  m_Sprite: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1363,3 +1530,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDelay: 0.1
+--- !u!114 &4442990444938256924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6005105388905284629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a668b16a254f4802a8529518ff782376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftNormalBody: {fileID: 91882854, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  rightNormalBody: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  upNormalBody: {fileID: 1995259745, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  downNormalBody: {fileID: -1795580091, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
+  leftToDownCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  rightToDownCurveBody: {fileID: -1595179478, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  upToRightCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  downToRightCurveBody: {fileID: 341366079, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
+  downToLeftCurveBody: {fileID: 1601005252, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}

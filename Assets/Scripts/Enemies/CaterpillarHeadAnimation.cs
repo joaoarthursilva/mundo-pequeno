@@ -1,18 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class CaterpillarHeadAnimation : MonoBehaviour
+namespace Enemies
 {
-    // Start is called before the first frame update
-    void Start()
+    public class CaterpillarHeadAnimation : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private Sprite rightHead;
+        [SerializeField] private Sprite leftHead;
+        [SerializeField] private Sprite downHead;
+        [SerializeField] private Sprite upHead;
+        private float _minX;
+        private float _maxX;
+        private float _minY;
+        private float _maxY;
+        private SpriteRenderer _spriteRenderer;
+        private Caterpillar.Direction _direction;
+        private Caterpillar _caterpillar;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Start()
+        {
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _caterpillar = GetComponent<Caterpillar>();
+        }
+
+        private void Update()
+        {
+            _direction = _caterpillar.GetDirection();
+            switch (_direction)
+            {
+                case Caterpillar.Direction.Down:
+                    _spriteRenderer.sprite = downHead;
+                    break;
+                case Caterpillar.Direction.Up:
+                    _spriteRenderer.sprite = upHead;
+                    break;
+                case Caterpillar.Direction.Right:
+                    _spriteRenderer.sprite = rightHead;
+                    break;
+                case Caterpillar.Direction.Left:
+                    _spriteRenderer.sprite = leftHead;
+                    break;
+            }
+        }
     }
 }

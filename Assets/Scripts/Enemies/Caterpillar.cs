@@ -5,7 +5,7 @@ namespace Enemies
     [RequireComponent(typeof(Rigidbody2D))]
     public class Caterpillar : Enemy
     {
-        private enum Direction
+        public enum Direction
         {
             Left,
             Right,
@@ -45,12 +45,14 @@ namespace Enemies
             if (new Vector2(_transform.position.x, _transform.position.y) == new Vector2(_maxX, _minY))
             {
                 _target = new Vector2(_maxX, _maxY);
+                _previousDirection = _currentDirection;
                 _currentDirection = Direction.Up;
                 _isHorizontalMovement = false;
             }
             else if (new Vector2(_transform.position.x, _transform.position.y) == new Vector2(_minX, _maxY))
             {
                 _target = new Vector2(_maxX, _maxY);
+                _previousDirection = _currentDirection;
                 _currentDirection = Direction.Right;
                 _isHorizontalMovement = true;
             }
@@ -77,6 +79,7 @@ namespace Enemies
                         _currentDirection = Direction.Left;
                         break;
                     case Direction.Down when _previousDirection == Direction.Left:
+                        
                         _target = new Vector2(_maxX, _target.y);
                         _previousDirection = _currentDirection;
                         _currentDirection = Direction.Right;
@@ -111,6 +114,11 @@ namespace Enemies
             return _target.x == _transform.position.x && _target.y == _transform.position.y;
         }
 
+        public bool IsHorizontalMovement()
+        {
+            return _isHorizontalMovement;
+        }
+
         private void Move()
         {
             var position = _transform.position;
@@ -131,9 +139,15 @@ namespace Enemies
                     break;
             }
         }
-        public bool IsHorizontalMovement()
+
+        public Direction GetDirection()
         {
-            return _isHorizontalMovement;
+            return _currentDirection;
+        }
+
+        public Direction GetPreviousDirection()
+        {
+            return _previousDirection;
         }
     }
 }

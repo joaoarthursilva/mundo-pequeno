@@ -1,4 +1,5 @@
 using System;
+using Managers;
 using UnityEngine;
 // using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
@@ -79,7 +80,7 @@ public class PlayerStats : MonoBehaviour
     {
         _isAlive = false;
         TurnOffMovement();
-        Debug.Log("Died");
+        FindObjectOfType<LevelManager>().Died();
     }
 
     public void Win()
