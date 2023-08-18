@@ -21,8 +21,10 @@ public class Sand : MonoBehaviour
         sugarScript.GetComponent<Sugar>().DeactivateSugar();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D col)
     {
+        col.TryGetComponent(out PlayerStats playerStats);
+        if (!playerStats) return;
         if (_hasBeenTouched) return;
         _hasBeenTouched = true;
         Invoke(nameof(VanishSand), timeToVanish);
