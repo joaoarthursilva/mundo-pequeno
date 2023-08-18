@@ -225,6 +225,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 438880728919303268, guid: 5574f27444a5c5248933413e0ee8a9ed, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1364632218, guid: c1328ed578e9ba34b9f375c4b6bf5e5a, type: 3}
+    - target: {fileID: 438880728919303268, guid: 5574f27444a5c5248933413e0ee8a9ed, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 438880728919303268, guid: 5574f27444a5c5248933413e0ee8a9ed, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 438880728919303268, guid: 5574f27444a5c5248933413e0ee8a9ed, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1714099212237592357, guid: 5574f27444a5c5248933413e0ee8a9ed, type: 3}
       propertyPath: m_Name
       value: Sugar
@@ -558,6 +574,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 25.534437, y: 2.5316038}
   m_EdgeRadius: 0
+--- !u!1 &458674438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2546407442880271466, guid: 9ee3f25e460a2c84f9f8e7c41f770f7f, type: 3}
+  m_PrefabInstance: {fileID: 541634167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &515767599
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,15 +894,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4416404643422451811, guid: 9ee3f25e460a2c84f9f8e7c41f770f7f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680086325561718795, guid: 9ee3f25e460a2c84f9f8e7c41f770f7f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4680086325561718795, guid: 9ee3f25e460a2c84f9f8e7c41f770f7f, type: 3}
       propertyPath: manageAnts
       value: 
       objectReference: {fileID: 833326238}
+    - target: {fileID: 6993745123850402615, guid: 9ee3f25e460a2c84f9f8e7c41f770f7f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8039533474263753630, guid: 9ee3f25e460a2c84f9f8e7c41f770f7f, type: 3}
+      propertyPath: back
+      value: 
+      objectReference: {fileID: 458674438}
     - target: {fileID: 8039533474263753630, guid: 9ee3f25e460a2c84f9f8e7c41f770f7f, type: 3}
       propertyPath: manageAnts
       value: 
       objectReference: {fileID: 833326238}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4680086325561718795, guid: 9ee3f25e460a2c84f9f8e7c41f770f7f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9ee3f25e460a2c84f9f8e7c41f770f7f, type: 3}
 --- !u!1001 &602782147
 PrefabInstance:
