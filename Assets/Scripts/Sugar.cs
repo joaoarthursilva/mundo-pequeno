@@ -10,7 +10,6 @@ public class Sugar : MonoBehaviour
     private void Awake()
     {
         _sugarSprite = transform.GetChild(0).gameObject;
-        Debug.Log(_sugarSprite);
         _canBeCollected = true;
         _hasBeenCollected = false;
     }
