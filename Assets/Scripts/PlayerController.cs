@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
     private float _horizontal;
     private float _vertical;
 
-    [SerializeField] private float runSpeed = 7.0f;
+    [SerializeField] private float normalRunSpeed = 7.0f;
+    private float _currentMoveSpeed;
     private bool _canMove;
 
     private void Start()
     {
+        _currentMoveSpeed = normalRunSpeed;
         TurnOnMovement();
         _body = GetComponent<Rigidbody2D>();
         _body.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -34,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        _body.velocity = new Vector2(_horizontal * runSpeed, _vertical * runSpeed);
+        _body.velocity = new Vector2(_horizontal * _currentMoveSpeed, _vertical * _currentMoveSpeed);
     }
 
     private void StopMoving()
@@ -47,8 +49,19 @@ public class PlayerController : MonoBehaviour
         _canMove = false;
     }
 
-    public void TurnOnMovement()
+    private void TurnOnMovement()
     {
         _canMove = true;
+    }
+
+    public void SlowDown(float time)
+    {
+        _currentMoveSpeed /= 2;
+        Invoke(nameof(NormalizeMovement), time);
+    }
+
+    private void NormalizeMovement()
+    {
+        _currentMoveSpeed = normalRunSpeed;
     }
 }

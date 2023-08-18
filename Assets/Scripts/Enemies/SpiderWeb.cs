@@ -1,18 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class SpiderWeb : MonoBehaviour
+namespace Enemies
 {
-    // Start is called before the first frame update
-    void Start()
+    [RequireComponent(typeof(BoxCollider2D))]
+    public class SpiderWeb : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private float timeToDestroy;
+        [SerializeField] private float slowDownDuration;
+        private void Start()
+        {
+            GetComponent<BoxCollider2D>().isTrigger = true;
+            Invoke(nameof(DestroyObject), timeToDestroy);
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void DestroyObject()
+        {
+            Destroy(gameObject);
+        }
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            col.TryGetComponent(out PlayerController playerController);
+            if (!playerController) return;
+            playerController.SlowDown(slowDownDuration);
+        }
     }
 }
