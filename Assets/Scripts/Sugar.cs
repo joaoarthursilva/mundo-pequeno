@@ -18,7 +18,8 @@ public class Sugar : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (!_canBeCollected || _hasBeenCollected) return;
-        var statsScript = col.gameObject.GetComponent<PlayerStats>();
+        col.TryGetComponent(out PlayerStats statsScript);
+        if (!statsScript) return;
         statsScript.IncreaseSugarAmount(amountOfSugar);
         _hasBeenCollected = true;
         DeactivateSugar();
