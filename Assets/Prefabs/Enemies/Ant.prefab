@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 68046535754111654}
   - component: {fileID: 68046535754111576}
   - component: {fileID: 5964895814404868115}
-  - component: {fileID: 68046535754111579}
+  - component: {fileID: 6735352253647239621}
   m_Layer: 6
   m_Name: Ant
   m_TagString: Untagged
@@ -83,7 +83,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &68046535754111579
+--- !u!114 &6735352253647239621
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,13 +92,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 68046535754111652}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b9460f9e3d70774fbcd6c471953dd86, type: 3}
+  m_Script: {fileID: 11500000, guid: 0223b94ef51743d48e70874cf0f670af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToRespawn: 0.5
-  movementDelay: 1
-  antSpriteFront: {fileID: 1358740349737880904}
-  antSpriteBack: {fileID: 2546407442880271466}
 --- !u!1 &1358740349737880904
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +105,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6870298613004825229}
   - component: {fileID: 7109937567734330396}
-  - component: {fileID: 3628978660275104146}
+  - component: {fileID: 4416404643422451811}
+  - component: {fileID: 8039533474263753630}
+  - component: {fileID: 633175975752636376}
   m_Layer: 0
   m_Name: AntSpriteFront
   m_TagString: Untagged
@@ -184,7 +182,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &3628978660275104146
+--- !u!61 &4416404643422451811
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358740349737880904}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &8039533474263753630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358740349737880904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b9460f9e3d70774fbcd6c471953dd86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToRespawn: 0.5
+  movementDelay: 1
+  _manageAnts: {fileID: 6735352253647239621}
+  isFront: 1
+--- !u!50 &633175975752636376
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -215,7 +255,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3427798897430280438}
   - component: {fileID: 2446014466936988093}
-  - component: {fileID: 6252541187877415295}
+  - component: {fileID: 6993745123850402615}
+  - component: {fileID: 4680086325561718795}
+  - component: {fileID: 39621650337804851}
   m_Layer: 0
   m_Name: AntSpriteBack
   m_TagString: Untagged
@@ -290,7 +332,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &6252541187877415295
+--- !u!61 &6993745123850402615
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546407442880271466}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &4680086325561718795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546407442880271466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b9460f9e3d70774fbcd6c471953dd86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToRespawn: 0.5
+  movementDelay: 1
+  _manageAnts: {fileID: 6735352253647239621}
+  isFront: 0
+--- !u!50 &39621650337804851
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
