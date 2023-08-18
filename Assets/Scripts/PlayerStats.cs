@@ -69,6 +69,7 @@ public class PlayerStats : MonoBehaviour
 
     public void Kill()
     {
+        if (!_isAlive) return;
         _currentSugarAmount = 0;
         UpdateSlider();
         Die();
