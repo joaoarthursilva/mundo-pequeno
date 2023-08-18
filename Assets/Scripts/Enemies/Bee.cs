@@ -64,7 +64,6 @@ namespace Enemies
                 _currentWaypoint++;
             }
         }
-
         
         public float GetHorizontalSpeed()
         {
