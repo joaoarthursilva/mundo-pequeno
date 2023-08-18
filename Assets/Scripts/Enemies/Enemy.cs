@@ -10,9 +10,9 @@ namespace Enemies
             GetComponent<BoxCollider2D>().isTrigger = true;
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerEnter2D(Collider2D col)
         {
-            other.TryGetComponent(out PlayerStats playerStats);
+            col.TryGetComponent(out PlayerStats playerStats);
             if (playerStats)
                 playerStats.Kill();
         }
