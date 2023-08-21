@@ -6,9 +6,9 @@ namespace Enemies
     public class Ant : Enemy
     {
         private Rigidbody2D _rb;
+        private Transform _transform;
         private Vector2 _targetAnthillPosition;
         private Vector2 _startingAnthillPosition;
-        private Transform _transform;
         private bool _canMove;
         private bool _canEnterAnthill;
         [SerializeField] private float timeToRespawn = .5f;
@@ -93,7 +93,7 @@ namespace Enemies
             var position = _transform.position;
 
             if (_targetAnthillPosition.x > position.x && _targetAnthillPosition.y > position.y)
-            {
+            { // diagonal pra cima direita
                 if (_toggleMovementDirection)
                 {
                     _rb.MovePosition(new Vector2(position.x + 1, position.y));
@@ -106,7 +106,7 @@ namespace Enemies
                 }
             }
             else if (_targetAnthillPosition.x < position.x && _targetAnthillPosition.y < position.y)
-            {
+            { // diagonal pra baixo esquerda
                 if (_toggleMovementDirection)
                 {
                     _rb.MovePosition(new Vector2(position.x - 1, position.y));
