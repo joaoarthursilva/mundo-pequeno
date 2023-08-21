@@ -9,7 +9,6 @@ namespace Enemies
         [SerializeField] private Sprite upNormalBody;
         [SerializeField] private Sprite downNormalBody;
 
-
         [SerializeField] private Sprite leftToDownCurveBody;
         [SerializeField] private Sprite rightToDownCurveBody;
         [SerializeField] private Sprite upToRightCurveBody;
