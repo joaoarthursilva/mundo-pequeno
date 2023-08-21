@@ -69,18 +69,17 @@ namespace Enemies
                 switch (_currentDirection)
                 {
                     case Direction.Right or Direction.Left:
-                        _target = new Vector2(_target.x, _target.y - 1);
+                        SetTargetToDown();
                         _previousDirection = _currentDirection;
                         _currentDirection = Direction.Down;
                         break;
                     case Direction.Down when _previousDirection == Direction.Right:
-                        _target = new Vector2(_minX, _target.y);
+                        SetTargetToMaxLeft();
                         _previousDirection = _currentDirection;
                         _currentDirection = Direction.Left;
                         break;
                     case Direction.Down when _previousDirection == Direction.Left:
-                        
-                        _target = new Vector2(_maxX, _target.y);
+                        SetTargetToMaxRight();
                         _previousDirection = _currentDirection;
                         _currentDirection = Direction.Right;
                         break;
@@ -91,23 +90,54 @@ namespace Enemies
                 switch (_currentDirection)
                 {
                     case Direction.Up or Direction.Down:
-                        _target = new Vector2(_target.x - 1, _target.y);
+                        SetTargetToLeft();
                         _previousDirection = _currentDirection;
                         _currentDirection = Direction.Left;
                         break;
                     case Direction.Left when _previousDirection == Direction.Down:
-                        _target = new Vector2(_target.x, _maxY);
+                        SetTargetToMaxUp();
                         _previousDirection = _currentDirection;
                         _currentDirection = Direction.Up;
                         break;
                     case Direction.Left when _previousDirection == Direction.Up:
-                        _target = new Vector2(_target.x, _minY);
+                        SetTargetToMaxDown();
                         _previousDirection = _currentDirection;
                         _currentDirection = Direction.Down;
                         break;
                 }
             }
         }
+
+        private void SetTargetToLeft() // so acontece no verticalmovement
+        {
+            _target = new Vector2(_target.x - 1, _target.y);
+        }
+
+        private void SetTargetToDown() // so acontece no horizontalmovement
+        {
+            _target = new Vector2(_target.x, _target.y - 1);
+        }
+
+        private void SetTargetToMaxLeft() // so acontece no horizontalmovement
+        {
+            _target = new Vector2(_minX, _target.y);
+        }
+
+        private void SetTargetToMaxRight() // so acontece no horizontalmovement
+        {
+            _target = new Vector2(_maxX, _target.y);
+        }
+
+        private void SetTargetToMaxUp() // so acontece no verticalmovement
+        {
+            _target = new Vector2(_target.x, _maxY);
+        }
+
+        private void SetTargetToMaxDown() // so acontece no verticalmovement
+        {
+            _target = new Vector2(_target.x, _minY);
+        }
+
 
         private bool HasArrivedOnTarget()
         {
