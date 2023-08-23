@@ -1,34 +1,31 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Enemies
 {
     public class CaterpillarBodyAnimation : MonoBehaviour
     {
-        [SerializeField] private Sprite leftNormalBody;
-        [SerializeField] private Sprite rightNormalBody;
-        [SerializeField] private Sprite upNormalBody;
-        [SerializeField] private Sprite downNormalBody;
-
-        [SerializeField] private Sprite leftToDownCurveBody;
-        [SerializeField] private Sprite rightToDownCurveBody;
-        [SerializeField] private Sprite upToRightCurveBody;
-        [SerializeField] private Sprite downToRightCurveBody;
-        [SerializeField] private Sprite downToLeftCurveBody;
-
         private float _minX;
         private float _maxX;
         private float _minY;
         private float _maxY;
-        private SpriteRenderer _spriteRenderer;
         private Caterpillar.Direction _currentDirection;
         private Caterpillar.Direction _previousDirection;
         private bool _isHorizontalMovement;
         private Caterpillar _caterpillar;
+        private Animator _animator;
+        private static readonly int Direction = Animator.StringToHash("direction");
+        private Transform _transform;
 
         private void Start()
         {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _transform = gameObject.transform;
             _caterpillar = GetComponent<Caterpillar>();
+            _animator = GetComponent<Animator>();
+            _minX = GameObject.FindWithTag("TopLeft").transform.position.x;
+            _maxX = GameObject.FindWithTag("TopRight").transform.position.x;
+            _minY = GameObject.FindWithTag("BottomLeft").transform.position.y;
+            _maxY = GameObject.FindWithTag("TopLeft").transform.position.y;
         }
 
         private void Update()
@@ -41,22 +38,23 @@ namespace Enemies
                 switch (_currentDirection)
                 {
                     case Caterpillar.Direction.Down:
-                        _spriteRenderer.sprite = _previousDirection == Caterpillar.Direction.Left
-                            ? leftToDownCurveBody
-                            : rightToDownCurveBody;
-                        break;
-                    case Caterpillar.Direction.Up:
-                        _spriteRenderer.sprite = upNormalBody;
+                        _animator.SetInteger(Direction, Math.Abs(_transform.position.x - _minX) < .1 ? 4 : 5);
+
                         break;
                     case Caterpillar.Direction.Right:
-                        _spriteRenderer.sprite = _previousDirection == Caterpillar.Direction.Down
-                            ? downToRightCurveBody
-                            : rightNormalBody;
+                        _animator.SetInteger(Direction, Math.Abs(_transform.position.x - _minX) < .1f ? 6 : 2);
+
                         break;
                     case Caterpillar.Direction.Left:
-                        _spriteRenderer.sprite = _previousDirection == Caterpillar.Direction.Down
-                            ? downToLeftCurveBody
-                            : leftNormalBody;
+                        if (Math.Abs(_transform.position.x - _maxX) < .1)
+                        {
+                            _animator.SetInteger(Direction, 5);
+                        }
+                        else
+                        {
+                            _animator.SetInteger(Direction, 0);
+                        }
+                        
                         break;
                 }
             }
@@ -65,16 +63,14 @@ namespace Enemies
                 switch (_currentDirection)
                 {
                     case Caterpillar.Direction.Down:
-                        _spriteRenderer.sprite = downNormalBody;
+                        _animator.SetInteger(Direction, Math.Abs(_transform.position.y - _maxY) < .1 ? 7 : 1);
+
                         break;
                     case Caterpillar.Direction.Up:
-                        _spriteRenderer.sprite = upNormalBody;
-                        break;
-                    case Caterpillar.Direction.Right:
-                        _spriteRenderer.sprite = rightNormalBody;
+                        _animator.SetInteger(Direction, Math.Abs(_transform.position.y - _minY) < .1 ? 6 : 3);
                         break;
                     case Caterpillar.Direction.Left:
-                        _spriteRenderer.sprite = leftNormalBody;
+                        _animator.SetInteger(Direction, Math.Abs(_transform.position.y - _minY) < .1f ? 6 : 3);
                         break;
                 }
             }

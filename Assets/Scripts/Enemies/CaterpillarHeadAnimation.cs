@@ -5,22 +5,15 @@ namespace Enemies
 {
     public class CaterpillarHeadAnimation : MonoBehaviour
     {
-        [SerializeField] private Sprite rightHead;
-        [SerializeField] private Sprite leftHead;
-        [SerializeField] private Sprite downHead;
-        [SerializeField] private Sprite upHead;
-        private float _minX;
-        private float _maxX;
-        private float _minY;
-        private float _maxY;
-        private SpriteRenderer _spriteRenderer;
         private Caterpillar.Direction _direction;
         private Caterpillar _caterpillar;
+        private Animator _animator;
+        private static readonly int Direction = Animator.StringToHash("direction");
 
         private void Start()
         {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
             _caterpillar = GetComponent<Caterpillar>();
+            _animator = GetComponent<Animator>();
         }
 
         private void Update()
@@ -29,16 +22,16 @@ namespace Enemies
             switch (_direction)
             {
                 case Caterpillar.Direction.Down:
-                    _spriteRenderer.sprite = downHead;
+                    _animator.SetInteger(Direction, 3);
                     break;
                 case Caterpillar.Direction.Up:
-                    _spriteRenderer.sprite = upHead;
+                    _animator.SetInteger(Direction, 2);
                     break;
                 case Caterpillar.Direction.Right:
-                    _spriteRenderer.sprite = rightHead;
+                    _animator.SetInteger(Direction, 1);
                     break;
                 case Caterpillar.Direction.Left:
-                    _spriteRenderer.sprite = leftHead;
+                    _animator.SetInteger(Direction, 0);
                     break;
             }
         }

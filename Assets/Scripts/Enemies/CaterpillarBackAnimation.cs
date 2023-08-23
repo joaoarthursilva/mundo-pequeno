@@ -4,22 +4,15 @@ namespace Enemies
 {
     public class CaterpillarBackAnimation : MonoBehaviour
     {
-        [SerializeField] private Sprite rightBack;
-        [SerializeField] private Sprite leftBack;
-        [SerializeField] private Sprite downBack;
-        [SerializeField] private Sprite upBack;
-        private float _minX;
-        private float _maxX;
-        private float _minY;
-        private float _maxY;
-        private SpriteRenderer _spriteRenderer;
         private Caterpillar.Direction _direction;
         private Caterpillar _caterpillar;
+        private static readonly int Direction = Animator.StringToHash("direction");
+        private Animator _animator;
 
         private void Start()
         {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
             _caterpillar = GetComponent<Caterpillar>();
+            _animator = GetComponent<Animator>();
         }
 
         private void Update()
@@ -28,16 +21,16 @@ namespace Enemies
             switch (_direction)
             {
                 case Caterpillar.Direction.Down:
-                    _spriteRenderer.sprite = downBack;
+                    _animator.SetInteger(Direction, 3);
                     break;
                 case Caterpillar.Direction.Up:
-                    _spriteRenderer.sprite = upBack;
+                    _animator.SetInteger(Direction, 2);
                     break;
                 case Caterpillar.Direction.Right:
-                    _spriteRenderer.sprite = rightBack;
+                    _animator.SetInteger(Direction, 0);
                     break;
                 case Caterpillar.Direction.Left:
-                    _spriteRenderer.sprite = leftBack;
+                    _animator.SetInteger(Direction, 1);
                     break;
             }
         }

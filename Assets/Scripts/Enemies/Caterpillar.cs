@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Enemies
 {
@@ -18,7 +19,8 @@ namespace Enemies
         [SerializeField] private float movementDelay;
         private Rigidbody2D _rb;
         private Transform _transform;
-
+        [SerializeField] private bool isBody;
+        private Animator _animator;
         private Direction _currentDirection;
         private Vector2 _target;
         private float _minX;
@@ -28,13 +30,16 @@ namespace Enemies
 
         private void Start()
         {
+            _animator = GetComponent<Animator>();
             _isHorizontalMovement = true;
             _transform = GetComponent<Transform>();
             _rb = GetComponent<Rigidbody2D>();
+            
             _minX = GameObject.FindWithTag("TopLeft").transform.position.x;
             _maxX = GameObject.FindWithTag("TopRight").transform.position.x;
             _minY = GameObject.FindWithTag("BottomLeft").transform.position.y;
             _maxY = GameObject.FindWithTag("TopLeft").transform.position.y;
+            
             _target = new Vector2(_maxX, _maxY);
             _currentDirection = Direction.Right;
             InvokeRepeating(nameof(Move), movementDelay, movementDelay);
@@ -61,6 +66,7 @@ namespace Enemies
         }
 
         private Direction _previousDirection;
+        private static readonly int Direction1 = Animator.StringToHash("direction");
 
         private void UpdateTarget()
         {
@@ -68,7 +74,12 @@ namespace Enemies
             {
                 switch (_currentDirection)
                 {
-                    case Direction.Right or Direction.Left:
+                    case Direction.Left:
+                        SetTargetToDown();
+                        _previousDirection = _currentDirection;
+                        _currentDirection = Direction.Down;
+                        break;
+                    case Direction.Right:
                         SetTargetToDown();
                         _previousDirection = _currentDirection;
                         _currentDirection = Direction.Down;
@@ -141,7 +152,8 @@ namespace Enemies
 
         private bool HasArrivedOnTarget()
         {
-            return _target.x == _transform.position.x && _target.y == _transform.position.y;
+            var position = _transform.position;
+            return Math.Abs(_target.x - position.x) < .01f && Math.Abs(_target.y - position.y) < .01f;
         }
 
         public bool IsHorizontalMovement()
@@ -168,8 +180,25 @@ namespace Enemies
                     _rb.MovePosition(new Vector2(position.x, position.y + 1));
                     break;
             }
+
+            if (isBody) CheckAnimation();
         }
 
+        private void CheckAnimation()
+        {
+            switch (_currentDirection)
+            {
+                case Direction.Down:
+                    _animator.SetInteger(Direction1, 1);
+                    break;
+                case Direction.Up:
+                    break;
+                case Direction.Left:
+                    break;
+                case Direction.Right:
+                    break;
+            }
+        }
         public Direction GetDirection()
         {
             return _currentDirection;
