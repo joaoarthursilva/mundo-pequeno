@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 1348279576712976228}
   - component: {fileID: 7719374385273771330}
   - component: {fileID: 1766493149789135722}
-  - component: {fileID: 9027812283347629470}
   - component: {fileID: 3536224960356911206}
   m_Layer: 6
-  m_Name: Body (5)
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6005105387825380546}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7991017681784649089
 SpriteRenderer:
@@ -148,28 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68d7a8716d74c03a7d3d0ae5324c588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHead: 0
+  isTail: 0
   movementDelay: 0.1
---- !u!114 &9027812283347629470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 354260435067177075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a668b16a254f4802a8529518ff782376, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftNormalBody: {fileID: 91882854, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  rightNormalBody: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  upNormalBody: {fileID: 1995259745, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  downNormalBody: {fileID: -1795580091, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  leftToDownCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  rightToDownCurveBody: {fileID: -1595179478, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  upToRightCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  downToRightCurveBody: {fileID: 341366079, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  downToLeftCurveBody: {fileID: 1601005252, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
 --- !u!95 &3536224960356911206
 Animator:
   serializedVersion: 5
@@ -203,10 +183,9 @@ GameObject:
   - component: {fileID: 1431982818054997210}
   - component: {fileID: 6133608991972198303}
   - component: {fileID: 7887081434127877350}
-  - component: {fileID: 8781485476934218712}
   - component: {fileID: 2126245728032551963}
   m_Layer: 6
-  m_Name: Body (1)
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,7 +204,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6005105387825380546}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1796628148070771279
 SpriteRenderer:
@@ -338,28 +317,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68d7a8716d74c03a7d3d0ae5324c588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHead: 0
+  isTail: 0
   movementDelay: 0.1
---- !u!114 &8781485476934218712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633371551737249348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a668b16a254f4802a8529518ff782376, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftNormalBody: {fileID: 91882854, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  rightNormalBody: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  upNormalBody: {fileID: 1995259745, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  downNormalBody: {fileID: -1795580091, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  leftToDownCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  rightToDownCurveBody: {fileID: -1595179478, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  upToRightCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  downToRightCurveBody: {fileID: 341366079, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  downToLeftCurveBody: {fileID: 1601005252, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
 --- !u!95 &2126245728032551963
 Animator:
   serializedVersion: 5
@@ -393,10 +353,9 @@ GameObject:
   - component: {fileID: 2895140824177556194}
   - component: {fileID: 7879550772364727709}
   - component: {fileID: 5531779190319510029}
-  - component: {fileID: 5572028913563053644}
   - component: {fileID: 941748537948417275}
   m_Layer: 6
-  m_Name: Body (6)
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,7 +374,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6005105387825380546}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4362823357402632513
 SpriteRenderer:
@@ -528,28 +487,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68d7a8716d74c03a7d3d0ae5324c588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHead: 0
+  isTail: 0
   movementDelay: 0.1
---- !u!114 &5572028913563053644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1820052915400813814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a668b16a254f4802a8529518ff782376, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftNormalBody: {fileID: 91882854, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  rightNormalBody: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  upNormalBody: {fileID: 1995259745, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  downNormalBody: {fileID: -1795580091, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  leftToDownCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  rightToDownCurveBody: {fileID: -1595179478, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  upToRightCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  downToRightCurveBody: {fileID: 341366079, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  downToLeftCurveBody: {fileID: 1601005252, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
 --- !u!95 &941748537948417275
 Animator:
   serializedVersion: 5
@@ -583,7 +523,6 @@ GameObject:
   - component: {fileID: 2769708189379244332}
   - component: {fileID: 3079260289833013975}
   - component: {fileID: 1988261101063410528}
-  - component: {fileID: 7709253046936981854}
   - component: {fileID: 6005105389069790885}
   m_Layer: 6
   m_Name: Body
@@ -605,7 +544,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6005105387825380546}
-  m_RootOrder: 1
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &543602648253894883
 SpriteRenderer:
@@ -718,28 +657,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68d7a8716d74c03a7d3d0ae5324c588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHead: 0
+  isTail: 0
   movementDelay: 0.1
---- !u!114 &7709253046936981854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4583334529164331433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a668b16a254f4802a8529518ff782376, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftNormalBody: {fileID: 91882854, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  rightNormalBody: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  upNormalBody: {fileID: 1995259745, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  downNormalBody: {fileID: -1795580091, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  leftToDownCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  rightToDownCurveBody: {fileID: -1595179478, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  upToRightCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  downToRightCurveBody: {fileID: 341366079, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  downToLeftCurveBody: {fileID: 1601005252, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
 --- !u!95 &6005105389069790885
 Animator:
   serializedVersion: 5
@@ -773,10 +693,9 @@ GameObject:
   - component: {fileID: 3838574447260467918}
   - component: {fileID: 7014678856322513894}
   - component: {fileID: 4290173198471882758}
-  - component: {fileID: 543303400711105612}
   - component: {fileID: 709243867507090926}
   m_Layer: 6
-  m_Name: Body (2)
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -795,7 +714,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6005105387825380546}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5921918075480644953
 SpriteRenderer:
@@ -908,28 +827,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68d7a8716d74c03a7d3d0ae5324c588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHead: 0
+  isTail: 0
   movementDelay: 0.1
---- !u!114 &543303400711105612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4731239066660147915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a668b16a254f4802a8529518ff782376, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftNormalBody: {fileID: 91882854, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  rightNormalBody: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  upNormalBody: {fileID: 1995259745, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  downNormalBody: {fileID: -1795580091, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  leftToDownCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  rightToDownCurveBody: {fileID: -1595179478, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  upToRightCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  downToRightCurveBody: {fileID: 341366079, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  downToLeftCurveBody: {fileID: 1601005252, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
 --- !u!95 &709243867507090926
 Animator:
   serializedVersion: 5
@@ -963,10 +863,9 @@ GameObject:
   - component: {fileID: 8763951976126776794}
   - component: {fileID: 7286305233194687106}
   - component: {fileID: 5351582586584778949}
-  - component: {fileID: 2866313106347379045}
   - component: {fileID: 1867330349772095383}
   m_Layer: 6
-  m_Name: Body (3)
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -985,7 +884,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6005105387825380546}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2686876826303292315
 SpriteRenderer:
@@ -1098,28 +997,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68d7a8716d74c03a7d3d0ae5324c588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHead: 0
+  isTail: 0
   movementDelay: 0.1
---- !u!114 &2866313106347379045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801860598919368027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a668b16a254f4802a8529518ff782376, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftNormalBody: {fileID: 91882854, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  rightNormalBody: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  upNormalBody: {fileID: 1995259745, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  downNormalBody: {fileID: -1795580091, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  leftToDownCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  rightToDownCurveBody: {fileID: -1595179478, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  upToRightCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  downToRightCurveBody: {fileID: 341366079, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  downToLeftCurveBody: {fileID: 1601005252, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
 --- !u!95 &1867330349772095383
 Animator:
   serializedVersion: 5
@@ -1153,7 +1033,6 @@ GameObject:
   - component: {fileID: 6005105387801771809}
   - component: {fileID: 6005105387801771810}
   - component: {fileID: 6005105387801771811}
-  - component: {fileID: 213228499}
   - component: {fileID: 6005105389069790882}
   m_Layer: 6
   m_Name: Head
@@ -1218,7 +1097,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -1886555472, guid: 6eefc7d31ad3fa546b79d465547140b6, type: 3}
+  m_Sprite: {fileID: 1447914542, guid: f0eea3e02f081714fb19e2e73dbe170f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1288,23 +1167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68d7a8716d74c03a7d3d0ae5324c588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHead: 1
+  isTail: 0
   movementDelay: 0.1
---- !u!114 &213228499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6005105387801771814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec335387ebec10a439e9bee3d9e93d3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rightHead: {fileID: -1886555472, guid: 6eefc7d31ad3fa546b79d465547140b6, type: 3}
-  leftHead: {fileID: 1550567498, guid: 6eefc7d31ad3fa546b79d465547140b6, type: 3}
-  downHead: {fileID: -1607700546, guid: 6eefc7d31ad3fa546b79d465547140b6, type: 3}
-  upHead: {fileID: 126119296, guid: 6eefc7d31ad3fa546b79d465547140b6, type: 3}
 --- !u!95 &6005105389069790882
 Animator:
   serializedVersion: 5
@@ -1354,13 +1219,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6005105388717826826}
-  - {fileID: 6899720209390002444}
   - {fileID: 4077621945971836229}
   - {fileID: 9060314027965866328}
   - {fileID: 8227254247045230634}
   - {fileID: 6510889026373496014}
   - {fileID: 1628344073589941104}
   - {fileID: 4698187848212444065}
+  - {fileID: 6899720209390002444}
   - {fileID: 6005105387801771813}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1378,7 +1243,6 @@ GameObject:
   - component: {fileID: 6005105388717826822}
   - component: {fileID: 6005105388717826823}
   - component: {fileID: 6005105388717826824}
-  - component: {fileID: 345628213545406353}
   - component: {fileID: 6005105389069790883}
   m_Layer: 6
   m_Name: Tail
@@ -1513,23 +1377,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68d7a8716d74c03a7d3d0ae5324c588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHead: 0
+  isTail: 1
   movementDelay: 0.1
---- !u!114 &345628213545406353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6005105388717826827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 254c482bf9e94a42a32fb977c65a768a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rightBack: {fileID: 1965778300, guid: 39d6f48fd41c36d46ae216339a0644ef, type: 3}
-  leftBack: {fileID: 976540330, guid: 39d6f48fd41c36d46ae216339a0644ef, type: 3}
-  downBack: {fileID: 1782630805, guid: 39d6f48fd41c36d46ae216339a0644ef, type: 3}
-  upBack: {fileID: -1890777252, guid: 39d6f48fd41c36d46ae216339a0644ef, type: 3}
 --- !u!95 &6005105389069790883
 Animator:
   serializedVersion: 5
@@ -1563,10 +1413,9 @@ GameObject:
   - component: {fileID: 8303090764145647355}
   - component: {fileID: 6894572287322054845}
   - component: {fileID: 5116281868176682205}
-  - component: {fileID: 6337834113897005127}
   - component: {fileID: 6780123255726427830}
   m_Layer: 6
-  m_Name: Body (4)
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1585,7 +1434,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6005105387825380546}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3085949590549663664
 SpriteRenderer:
@@ -1698,28 +1547,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68d7a8716d74c03a7d3d0ae5324c588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHead: 0
+  isTail: 0
   movementDelay: 0.1
---- !u!114 &6337834113897005127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8800751174787405744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a668b16a254f4802a8529518ff782376, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftNormalBody: {fileID: 91882854, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  rightNormalBody: {fileID: -1078266582, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  upNormalBody: {fileID: 1995259745, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  downNormalBody: {fileID: -1795580091, guid: 6bd8d27c156f5f444b11d1219ee2a4b1, type: 3}
-  leftToDownCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  rightToDownCurveBody: {fileID: -1595179478, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  upToRightCurveBody: {fileID: -1978902247, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  downToRightCurveBody: {fileID: 341366079, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
-  downToLeftCurveBody: {fileID: 1601005252, guid: 801c482fb41800f4c8df39c29c82b773, type: 3}
 --- !u!95 &6780123255726427830
 Animator:
   serializedVersion: 5

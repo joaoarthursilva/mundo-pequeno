@@ -1303,6 +1303,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 221502732, guid: 7aa8df6389ad96c43b96e31a26f486f5, type: 3}
+      propertyPath: maxSugarAmount
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 221502732, guid: 7aa8df6389ad96c43b96e31a26f486f5, type: 3}
       propertyPath: sugarAmountSlider
       value: 
       objectReference: {fileID: 1106064821}
@@ -3336,7 +3340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1714099212237592359, guid: 5574f27444a5c5248933413e0ee8a9ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.910623
+      value: 5.839377
       objectReference: {fileID: 0}
     - target: {fileID: 1714099212237592359, guid: 5574f27444a5c5248933413e0ee8a9ed, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4482,7 +4486,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsToStartActivated: []
-  objectsToStartDeactivated: []
+  objectsToStartDeactivated:
+  - {fileID: 407715939}
+  - {fileID: 1190279859}
 --- !u!1 &2011291900
 GameObject:
   m_ObjectHideFlags: 0
@@ -7143,46 +7149,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 543303400711105612, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1766493149789135722, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
-      propertyPath: isBody
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1988261101063410528, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
-      propertyPath: isBody
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2866313106347379045, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4290173198471882758, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
-      propertyPath: isBody
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5116281868176682205, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
-      propertyPath: isBody
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5351582586584778949, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
-      propertyPath: isBody
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5531779190319510029, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
-      propertyPath: isBody
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5572028913563053644, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6005105387801771812, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1447914542, guid: f0eea3e02f081714fb19e2e73dbe170f, type: 3}
     - target: {fileID: 6005105387825380546, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -7230,26 +7196,6 @@ PrefabInstance:
     - target: {fileID: 6005105387825380547, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
       propertyPath: m_Name
       value: Caterpillar
-      objectReference: {fileID: 0}
-    - target: {fileID: 6337834113897005127, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7709253046936981854, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7887081434127877350, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
-      propertyPath: isBody
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8781485476934218712, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9027812283347629470, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89af41e3246b9c4c98c25b29368b03b, type: 3}
