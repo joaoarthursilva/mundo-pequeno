@@ -5,94 +5,239 @@ namespace Enemies
     public class Spider : Enemy
     {
         private Vector2 _targetPosition;
-        private Vector2 _startingPosition;
         private bool _canMove;
         private Rigidbody2D _rb;
         private Transform _transform;
         [SerializeField] private GameObject spiderWeb;
         [SerializeField] private float releaseSpiderWebDelay;
 
-        [SerializeField] private Transform topLeft;
-        [SerializeField] private Transform topRight;
-
-        [SerializeField] private Transform bottomLeft;
-
-        // [SerializeField] private Transform bottomRight;
+        private bool _toggleMovementDirection;
         private Animator _spiderAnimator;
         private SpriteRenderer _spiderSpriteRenderer;
-        private static readonly int IsMovingSideways = Animator.StringToHash("isMovingSideways");
-        private static readonly int IsMovingUp = Animator.StringToHash("isMovingUp");
-        private static readonly int IsMovingDown = Animator.StringToHash("isMovingDown");
+        private float _minX, _maxX, _minY, _maxY;
+
+        [SerializeField] private float movementDelay;
+        private Vector2 _pos;
+        [SerializeField] private float delayAfterArrivingOnTarget;
+
+        private enum Direction
+        {
+            None,
+            Left,
+            Right,
+            Down,
+            Up,
+            DiagUpRight,
+            DiagDownRight,
+            DiagUpLeft,
+            DiagDownLeft,
+        }
 
         private void Start()
         {
+            _toggleMovementDirection = false;
+            _transform = gameObject.transform;
+            FindLimits();
             _spiderAnimator = GetComponent<Animator>();
             _spiderSpriteRenderer = GetComponent<SpriteRenderer>();
             _canMove = true;
             _rb = GetComponent<Rigidbody2D>();
-            _transform = gameObject.transform;
+            ChangeTarget();
             InvokeRepeating(nameof(ReleaseSpiderWeb), 0f, releaseSpiderWebDelay);
+            InvokeRepeating(nameof(Move), movementDelay, movementDelay);
+        }
+
+        private void FindLimits()
+        {
+            _minX = GameObject.FindWithTag("TopLeft").transform.position.x;
+            _maxX = GameObject.FindWithTag("TopRight").transform.position.x;
+            _minY = GameObject.FindWithTag("BottomLeft").transform.position.y;
+            _maxY = GameObject.FindWithTag("TopLeft").transform.position.y;
         }
 
         private void Update()
         {
-            ManageDirection();
+            _pos = _transform.position;
         }
 
-        private void ManageDirection()
+        private Direction CheckTargetDirection()
         {
-            var position = _transform.position;
-            var isMovingSideways = _targetPosition.x > position.x || _targetPosition.x < position.x;
-            
-            var isMovingUp = _targetPosition.y > position.y;
-            var isMovingDown = _targetPosition.y < position.y;
-            
-            if(isMovingUp)
+            if (_targetPosition.x > _pos.x && _targetPosition.y > _pos.y)
             {
-                _spiderAnimator.SetBool(IsMovingDown, false);
-                _spiderAnimator.SetBool(IsMovingSideways, false);
-                _spiderAnimator.SetBool(IsMovingUp, true);
-            }
-            if (isMovingDown)
-            {
-                _spiderAnimator.SetBool(IsMovingUp, false);
-                _spiderAnimator.SetBool(IsMovingDown, true);
-                _spiderAnimator.SetBool(IsMovingSideways, false);
+                return Direction.DiagUpRight;
             }
 
-            if (isMovingSideways)
+            if (_targetPosition.x < _pos.x && _targetPosition.y < _pos.y)
             {
-                _spiderAnimator.SetBool(IsMovingUp, false);
-                _spiderAnimator.SetBool(IsMovingDown, false);
-                _spiderAnimator.SetBool(IsMovingSideways, true);
+                return Direction.DiagDownLeft;
             }
-            _spiderSpriteRenderer.flipX = _targetPosition.x > position.x;
+
+            if (_targetPosition.x > _pos.x && _targetPosition.y < _pos.y)
+            {
+                return Direction.DiagDownRight;
+            }
+
+            if (_targetPosition.x < _pos.x && _targetPosition.y > _pos.y)
+            {
+                return Direction.DiagUpLeft;
+            }
+
+            if (_targetPosition.x > _pos.x)
+            {
+                return Direction.Right;
+            }
+
+            if (_targetPosition.y > _pos.y)
+            {
+                return Direction.Up;
+            }
+
+            if (_targetPosition.x < _pos.x)
+            {
+                return Direction.Left;
+            }
+
+            if (_targetPosition.y < _pos.y)
+            {
+                return Direction.Down;
+            }
+
+            return Direction.None;
         }
 
         private void FixedUpdate()
         {
             if (new Vector2(_transform.position.x, _transform.position.y) == _targetPosition)
             {
+                CantMove();
                 ChangeTarget();
             }
-
-            if (_canMove) Move();
         }
+
+        private void CanMove()
+        {
+            _canMove = true;
+        }
+
+        private void CantMove()
+        {
+            _canMove = false;
+            _spiderAnimator.SetInteger(Direction1, 0);
+            _spiderSpriteRenderer.flipX = false;
+            Invoke(nameof(CanMove), delayAfterArrivingOnTarget);
+        }
+
+        private Direction direction;
+        private static readonly int Direction1 = Animator.StringToHash("direction");
 
         private void Move()
         {
-            _rb.MovePosition(Vector2.MoveTowards(_transform.position, _targetPosition, .1f));
+            if (!_canMove) return;
+            direction = CheckTargetDirection();
+
+            switch (direction)
+            {
+                case Direction.DiagDownLeft:
+                    if (_toggleMovementDirection)
+                    {
+                        MoveLeft();
+                        _toggleMovementDirection = false;
+                    }
+                    else
+                    {
+                        MoveDown();
+                        _toggleMovementDirection = true;
+                    }
+
+                    break;
+                case Direction.DiagDownRight:
+                    if (_toggleMovementDirection)
+                    {
+                        MoveRight();
+                        _toggleMovementDirection = false;
+                    }
+                    else
+                    {
+                        MoveDown();
+                        _toggleMovementDirection = true;
+                    }
+
+                    break;
+                case Direction.DiagUpLeft:
+                    if (_toggleMovementDirection)
+                    {
+                        MoveLeft();
+                        _toggleMovementDirection = false;
+                    }
+                    else
+                    {
+                        MoveUp();
+                        _toggleMovementDirection = true;
+                    }
+
+                    break;
+                case Direction.DiagUpRight:
+                    if (_toggleMovementDirection)
+                    {
+                        MoveRight();
+                        _toggleMovementDirection = false;
+                    }
+                    else
+                    {
+                        MoveUp();
+                        _toggleMovementDirection = true;
+                    }
+
+                    break;
+                case Direction.Right:
+                    MoveRight();
+                    break;
+                case Direction.Left:
+                    MoveLeft();
+                    break;
+                case Direction.Down:
+                    MoveDown();
+                    break;
+                case Direction.Up:
+                    MoveUp();
+                    break;
+            }
+        }
+
+        private void MoveUp()
+        {
+            _spiderAnimator.SetInteger(Direction1, 1);
+            _spiderSpriteRenderer.flipX = false;
+            _rb.MovePosition(new Vector2(_pos.x, _pos.y + 1));
+        }
+
+        private void MoveDown()
+        {
+            _spiderAnimator.SetInteger(Direction1, 0);
+            _spiderSpriteRenderer.flipX = false;
+            _rb.MovePosition(new Vector2(_pos.x, _pos.y - 1));
+        }
+
+        private void MoveLeft()
+        {
+            _spiderAnimator.SetInteger(Direction1, 2);
+            _spiderSpriteRenderer.flipX = false;
+            _rb.MovePosition(new Vector2(_pos.x - 1, _pos.y));
+        }
+
+        private void MoveRight()
+        {
+            _spiderAnimator.SetInteger(Direction1, 2);
+            _spiderSpriteRenderer.flipX = true;
+            _rb.MovePosition(new Vector2(_pos.x + 1, _pos.y));
         }
 
         private void ChangeTarget()
         {
-            var topLeftPosition = topLeft.position;
-            var topRightPosition = topRight.position;
-            var bottomLeftPosition = bottomLeft.position;
             do
             {
-                _targetPosition = new Vector2(Random.Range(topLeftPosition.x + 1, topRightPosition.x - 1),
-                    Random.Range(topLeftPosition.y - 1, bottomLeftPosition.y + 1));
+                _targetPosition = new Vector2(Mathf.FloorToInt(Random.Range(_minX + 1, _maxX - 1)) + .5f,
+                    Mathf.FloorToInt(Random.Range(_maxY - 1, _minY + 1)) + .5f);
             } while (_targetPosition == new Vector2(_transform.position.x, _transform.position.y));
         }
 

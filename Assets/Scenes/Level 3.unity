@@ -690,6 +690,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 221502732, guid: 7aa8df6389ad96c43b96e31a26f486f5, type: 3}
+      propertyPath: maxSugarAmount
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 221502732, guid: 7aa8df6389ad96c43b96e31a26f486f5, type: 3}
       propertyPath: sugarAmountSlider
       value: 
       objectReference: {fileID: 1599352719}
@@ -1041,11 +1045,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6303974750723664412, guid: 535c9c501edb4374f8d5d4c4310282e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 6303974750723664412, guid: 535c9c501edb4374f8d5d4c4310282e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -5.5
       objectReference: {fileID: 0}
     - target: {fileID: 6303974750723664412, guid: 535c9c501edb4374f8d5d4c4310282e6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1091,6 +1095,14 @@ PrefabInstance:
       propertyPath: bottomLeft
       value: 
       objectReference: {fileID: 247651628}
+    - target: {fileID: 6303974750723664413, guid: 535c9c501edb4374f8d5d4c4310282e6, type: 3}
+      propertyPath: movementDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6303974750723664413, guid: 535c9c501edb4374f8d5d4c4310282e6, type: 3}
+      propertyPath: delayAfterArrivingOnTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6303974750723664480, guid: 535c9c501edb4374f8d5d4c4310282e6, type: 3}
       propertyPath: m_Name
       value: Spider
