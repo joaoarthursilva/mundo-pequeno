@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 namespace Managers
@@ -10,6 +11,7 @@ namespace Managers
         private int _sugarsLeftToCollect;
         [SerializeField] private Canvas youWinScreen;
         [SerializeField] private Canvas youDiedScreen;
+        [SerializeField] private TextMeshProUGUI sugarsLeftToCollectTextMeshProUGUI;
 
         private void Start()
         {
@@ -32,6 +34,8 @@ namespace Managers
                     _sugarsLeftToCollect--;
                 }
             }
+
+            sugarsLeftToCollectTextMeshProUGUI.text = $"{_sugarsLeftToCollect}";
 
             if (_sugarsLeftToCollect <= 0)
             {
