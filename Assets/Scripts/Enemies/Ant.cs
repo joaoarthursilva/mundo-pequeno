@@ -12,17 +12,24 @@ namespace Enemies
         private bool _canMove;
         private bool _canEnterAnthill;
         [SerializeField] private float timeToRespawn = .5f;
-        [SerializeField] private float movementDelay = 1f;
-        [SerializeField] private GameObject back;
+        [SerializeField] private float movementDelay = .3f;
         private Vector2 _spawn;
         private Vector2 _currentTarget;
+        private bool _toggleMovementDirection = true;
+        private Vector2 _prevPos;
+
+        private Animator _animator;
+        private static readonly int Direction = Animator.StringToHash("direction");
+        private SpriteRenderer _spriteRenderer;
 
         private void Start()
         {
+            _animator = GetComponent<Animator>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
             _rb = GetComponent<Rigidbody2D>();
             _transform = gameObject.transform;
             Spawn();
-            InvokeRepeating(nameof(Move), 0f, movementDelay);
+            InvokeRepeating(nameof(Move), movementDelay, movementDelay);
         }
 
         private Vector2 GetNewTarget()
@@ -77,63 +84,115 @@ namespace Enemies
             _canEnterAnthill = true;
         }
 
-        private bool _toggleMovementDirection = true;
-        private Vector2 _prevPos;
-
-        public Vector2 GetTargetAnthillPosition()
-        {
-            return _targetAnthillPosition;
-        }
-
         private void Move()
         {
-            back.GetComponent<Rigidbody2D>().MovePosition(gameObject.transform.position);
-
             if (!_canMove) return;
             var position = _transform.position;
 
             if (_targetAnthillPosition.x > position.x && _targetAnthillPosition.y > position.y)
-            { // diagonal pra cima direita
+            {
+                // diagonal pra cima direita
                 if (_toggleMovementDirection)
                 {
-                    _rb.MovePosition(new Vector2(position.x + 1, position.y));
+                    MoveRight();
                     _toggleMovementDirection = false;
                 }
                 else
                 {
-                    _rb.MovePosition(new Vector2(position.x, position.y + 1));
+                    MoveUp();
+                    _toggleMovementDirection = true;
+                }
+            }
+            else if (_targetAnthillPosition.x < position.x && _targetAnthillPosition.y > position.y)
+            {
+                // diagonal pra cima esquerda
+                if (_toggleMovementDirection)
+                {
+                    MoveLeft();
+                    _toggleMovementDirection = false;
+                }
+                else
+                {
+                    MoveUp();
                     _toggleMovementDirection = true;
                 }
             }
             else if (_targetAnthillPosition.x < position.x && _targetAnthillPosition.y < position.y)
-            { // diagonal pra baixo esquerda
+            {
+                // diagonal pra baixo esquerda
                 if (_toggleMovementDirection)
                 {
-                    _rb.MovePosition(new Vector2(position.x - 1, position.y));
+                    MoveLeft();
                     _toggleMovementDirection = false;
                 }
                 else
                 {
-                    _rb.MovePosition(new Vector2(position.x, position.y - 1));
+                    MoveDown();
+                    _toggleMovementDirection = true;
+                }
+            }
+            else if (_targetAnthillPosition.x > position.x && _targetAnthillPosition.y < position.y)
+            {
+                // diagonal pra baixo direita
+                if (_toggleMovementDirection)
+                {
+                    MoveRight();
+                    _toggleMovementDirection = false;
+                }
+                else
+                {
+                    MoveDown();
                     _toggleMovementDirection = true;
                 }
             }
             else if (_targetAnthillPosition.x > position.x)
             {
-                _rb.MovePosition(new Vector2(position.x + 1, position.y));
+                MoveRight();
             }
             else if (_targetAnthillPosition.y > position.y)
             {
-                _rb.MovePosition(new Vector2(position.x, position.y + 1));
+                MoveUp();
             }
             else if (_targetAnthillPosition.x < position.x)
             {
-                _rb.MovePosition(new Vector2(position.x - 1, position.y));
+                MoveLeft();
             }
             else if (_targetAnthillPosition.y < position.y)
             {
-                _rb.MovePosition(new Vector2(position.x, position.y - 1));
+                MoveDown();
             }
+        }
+
+        private void MoveUp()
+        {
+            var position = _transform.position;
+            _rb.MovePosition(new Vector2(position.x, position.y + 1));
+            _animator.SetInteger(Direction, 1);
+            _spriteRenderer.flipX = false;
+        }
+
+        private void MoveDown()
+        {
+            var position = _transform.position;
+            _rb.MovePosition(new Vector2(position.x, position.y - 1));
+            _animator.SetInteger(Direction, 0);
+            _spriteRenderer.flipX = false;
+        }
+
+        private void MoveRight()
+        {
+            var position = _transform.position;
+            _rb.MovePosition(new Vector2(position.x + 1, position.y));
+            _animator.SetInteger(Direction, 2);
+            _spriteRenderer.flipX = true;
+        }
+
+        private void MoveLeft()
+        {
+            var position = _transform.position;
+            _rb.MovePosition(new Vector2(position.x - 1, position.y));
+            _animator.SetInteger(Direction, 2);
+            _spriteRenderer.flipX = false;
         }
     }
 }
