@@ -18,6 +18,7 @@ public class Sand : MonoBehaviour
 
     private void Start()
     {
+        if (sugarScript == null) return;
         sugarScript.GetComponent<Sugar>().DeactivateSugar();
     }
 
