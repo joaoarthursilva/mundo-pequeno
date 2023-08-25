@@ -54,7 +54,7 @@ namespace Enemies
 
             FindLimits();
 
-            _target = new Vector2(_maxX, _maxY);
+            _target = new Vector2(_maxX, transform.position.y);
             _directionToTarget = Direction.Right;
             _directionOfPreviousTarget = _directionToTarget;
             _currentAnim = Animations.Right;
